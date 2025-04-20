@@ -3,16 +3,16 @@ import StockContainer from "./StockContainer";
 import PortfolioContainer from "./PortfolioContainer";
 import SearchBar from "./SearchBar";
 
-function MainContainer() {
+function MainContainer({ stocks, portfolio, onBuy, onSell }) {
   return (
     <div>
       <SearchBar />
       <div className="row">
         <div className="col-8">
-          <StockContainer />
+          <StockContainer stocks={stocks} onBuy={onBuy}/>
         </div>
         <div className="col-4">
-          <PortfolioContainer />
+          <PortfolioContainer portfolio={portfolio} onSell={onSell} />
         </div>
       </div>
     </div>
